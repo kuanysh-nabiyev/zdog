@@ -58,12 +58,15 @@ SvgRenderer.renderPath = function( svg, elem, pathCommands, isClosed ) {
   this.setPath( svg, elem, pathValue );
 };
 
-SvgRenderer.stroke = function( svg, elem, isStroke, color, lineWidth ) {
+SvgRenderer.stroke = function( svg, elem, isStroke, color, lineWidth, isStrokeDashed ) {
   if ( !isStroke ) {
     return;
   }
   elem.setAttribute( 'stroke', color );
   elem.setAttribute( 'stroke-width', lineWidth );
+  if (isStrokeDashed) {
+    elem.setAttribute( 'stroke-dasharray', '5' );
+  }
 };
 
 SvgRenderer.fill = function( svg, elem, isFill, color ) {

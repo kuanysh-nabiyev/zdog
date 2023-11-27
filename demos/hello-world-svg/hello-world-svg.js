@@ -31,6 +31,7 @@ new Zdog.Rect({
   stroke: 3,
   color: '#E62',
   fill: true,
+  isStrokeDashed: true
 });
 
 // ----- animate ----- //

@@ -17,6 +17,7 @@
 
 var Shape = Anchor.subclass({
   stroke: 1,
+  isStrokeDashed: false,
   fill: false,
   color: '#333',
   closed: true,
@@ -191,7 +192,7 @@ Shape.prototype.renderPath = function( ctx, renderer ) {
   var color = this.getRenderColor();
 
   renderer.renderPath( ctx, elem, this.pathCommands, isClosed );
-  renderer.stroke( ctx, elem, this.stroke, color, this.getLineWidth() );
+  renderer.stroke( ctx, elem, this.stroke, color, this.getLineWidth(), this.isStrokeDashed );
   renderer.fill( ctx, elem, this.fill, color );
   renderer.end( ctx, elem );
 };
